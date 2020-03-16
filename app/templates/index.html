@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+        <div class="form-style-10">
+<!--                <h1 id="title" class="text-center">QCForm from {{ user }}</h1>-->
+                <form class="form" action="/index" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+
+                <!--/*        editor_name         */-->
+                        <p>
+                            {{ form.editor_name.label(class_="form-label") }}<br>
+                            {{ form.editor_name(size=30) }}<br>
+                            {% for error in form.editor_name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                <!--/*        producer_name         */-->
+                            <p>
+                            {{ form.producer_name.label }}<br>
+                            {{ form.producer_name(size=30) }}<br>
+                            {% for error in form.producer_name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                <!--/*        program_name         */-->
+                         <p>
+                            {{ form.program_name.label }}<br>
+                            {{ form.program_name(size=30) }}<br>
+                            {% for error in form.program_name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                <!--/*        source ID         */-->
+                         <p>
+                            {{ form.source_id.label }}<br>
+                            {{ form.source_id(size=30) }}<br>
+                            {% for error in form.source_id.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                <!--/*        exported ID         */-->
+                         <p>
+                            {{ form.exported_id.label }}<br>
+                            {{ form.exported_id(size=30) }}<br>
+                            {% for error in form.exported_id.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+<div id="regular-checkboxes">
+                <!--/*        Camera Quality         */-->
+                         <p>
+                            {{ form.cameras.label }}<br>
+                            {{ form.cameras(multiple=True, class_="regular-checkbox") }}<br>
+                             <br>
+                        </p>
+</div>
+<div id="regular-checkboxes">
+                <!--/*        Sound Quality         */-->
+                         <p>
+                            {{ form.sounds.label }}<br>
+                            {{ form.sounds(multiple=True, class_="regular-checkbox") }}<br>
+                             <br>
+                        </p>
+</div>
+                <!--/*        Comments         */-->
+                         <p>
+                            {{ form.comments.label }}<br>
+                            {{ form.comments (rows=4)}}<br>
+                            {% for error in form.comments.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                    <hr>
+
+                        <p>{{ form.submit() }}</p>
+
+                </form>
+        </div>
+
+</section>
+{% endblock %}
