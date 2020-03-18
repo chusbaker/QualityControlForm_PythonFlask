@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="form-style-11">
+
+     <td>
+         <li>ID: {{ qid }} </li>
+         <li>DATE & TIME: {{ timestamp }} </li>
+         <li>EDITOR: {{ editor_name }} </li>
+         <li>PRODUCER: {{ producer_name }} </li>
+         <li>PROGRAM: {{ program_name }} </li>
+         <li>SOURCE IDs: {{ source_id }} </li>
+         <li>EXPORTED ID: {{ exported_id }} </li>
+         <li>CAMERA QUALITY CONTROL: {{ camera }} </li>
+         <li>SOUND QUALITY CONTROL: {{ sound }} </li>
+         <li>COMMENTS: {{ comments }} </li>
+     </td>
+
+{% endblock %}
