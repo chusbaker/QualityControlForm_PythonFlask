@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table class="form-style-11">
+     <tr>
+        <td>ID</td>
+        <td>Editor Name</td>
+        <td>Producer Name</td>
+        <td>Program Name</td>
+        <td>Source id</td>
+        <td>Exported id</td>
+        <td>Camera</td>
+        <td>Sound</td>
+        <td>Comments</td>
+        <td>Timestamp</td>
+     </tr>
+      {% for row in records_list %}
+    <tr>
+
+        <td>{{ row.qc_form_id }}</td>
+        <td>{{ row.editor_name }}</td>
+        <td>{{ row.producer_name }}</td>
+        <td>{{ row.program_name }}</td>
+        <td>{{ row.source_id }}</td>
+        <td>{{ row.exported_id }}</td>
+        <td>{{ row.cameras }}</td>
+        <td>{{ row.sounds }}</td>
+        <td>{{ row.comments }}</td>
+        <td>{{ row.timestamp }}</td>
+     </tr>
+
+
+
+<!--        <td bgcolor="{{ row.stat_colour }}">{{ row.unit_status }}</td>-->
+
+    {% endfor %}
+
+    </table>
+    {% if prev_url %}
+        <a href="{{ prev_url }}">Newer posts</a>
+        {% endif %}
+        {% if next_url %}
+        <a href="{{ next_url }}">Older posts</a>
+        {% endif %}
+{% endblock %}

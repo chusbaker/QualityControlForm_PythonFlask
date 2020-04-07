@@ -1,0 +1,193 @@
+ @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body{
+background: #424242;
+}
+
+body hr {
+border: 0.1px solid #2E2E2E;
+width: 1px;
+float: left;
+}
+
+div {
+padding: 0;
+}
+.form-style-10{
+	width:360px;
+	padding:5px;
+	background: #2E2E2E;
+	border-radius: 20px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 15px 'Bitter', serif;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+.form-style-10 .inner-wrap{
+	padding: 5px;
+	background: #2E2E2E;
+	border-radius: 6px;
+	margin: 5px, 1px, 5px;
+}
+
+.form-style-10 .headbox{
+    border-radius: 2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border: 1px solid #fff;
+	padding: 3px 1px 3px 1px;
+}
+
+.form-style-10 h1 {
+	float: center;
+    display: block;
+	margin-top: 5px;
+	text-align: center;
+	font: 20px Arial, Helvetica, sans-serif;
+}
+
+.form-style-10 label{
+	float: left;
+    display:block;
+	font: 14px Arial, Helvetica, sans-serif;
+	color: #888;
+	margin: 0px, 0px, 3px;
+}
+
+.form-style-10 input[type="text"],
+.form-style-10 textarea,
+.form-style-10 select {
+	float: right;
+    display:block;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 0px, 10px, 0px, 0px;
+	border-radius: 6px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border: 2px solid #fff;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form-style-10 input[type="button"],
+.form-style-10 input[type="submit"]{
+	background: #2A88AD;
+	padding: 5px 147px 8px 146px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 20px 'Bitter', serif;
+	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	border: 0px solid #257C9E;
+	font-size: 20px;
+}
+.form-style-10 input[type="button"]:hover,
+.form-style-10 input[type="submit"]:hover{
+	background: #2A6881;
+	margin: 5px, 20px;
+	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+.form-style-11{
+	width:500px;
+	padding:5px;
+	background: #2E2E2E;
+	border-radius: 20px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 15px 'Bitter', serif;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+.form-style-11 .headbox{
+    border-radius: 2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border: 1px solid #fff;
+    wrap: none;
+}
+
+.form-style-10 label{
+	float: left;
+    display:block;
+	font: 14px Arial, Helvetica, sans-serif;
+	color: #888;
+	margin: 3px, 0px, 3px;
+}
+
+.form-style-10 tr {
+    padding: 3px 1px 3px 1px;
+    wrap: none;
+}
+
+#regular-checkboxes {
+    display: inline-block;
+    left center no-repeat;
+    overflow-y: hidden;
+    width: 88%;
+    padding: 5px, 2px, 5px, 2px;
+}
+
+.regular-checkbox label {
+    display: block;
+    float: left;
+    margin: 0px;
+    text-indent: 2px;
+    vertical-align: bottom;
+    width: 44%;
+}
+
+.regular-checkbox input[type="checkbox"]{
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    float: left;
+    position: relative;
+    top: 0px;
+}
+
+.regular-comment input[type="textarea"]{
+    display:block;
+    list-style: none;
+    pading: 0 0 10px 0;
+}
+
+ul {
+    display: inline;
+    list-style-image: none;
+    list-style: none;
+    list-style-type: none;
+}
+
+.done {
+    display: block;
+
+    width: 360px;
+    float: left;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font: 'Bitter', serif;
+    border: 2px solid darkred;
+    background-color: red;
+    color: white;
+    margin: 0;
+}

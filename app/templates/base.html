@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}"/>
+        {% if title %}
+            <title id="title" class="text-center">{{ title }} - Q C Form</title>
+            {% else %}
+            <title id="title" class="text-center">QCForm</title>
+        {% endif %}
+        <title id="title" class="text-center">QCForm</title>
+    </head>
+    <body>
+        <div class="form-style-10 headbox">
+            <h1> Quality Control Form | AlRayyan TV</h1>
+        </div>
+        <a href="{{ url_for('index') }}"><></a>
+        <a href="{{ url_for('records') }}">*</a>
+         <hr>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </body>
+</html>
