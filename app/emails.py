@@ -20,8 +20,8 @@ def send_async_email(app, msg):
         mail.send(msg)
 
 def send_records_email():
-    user = os.getenv('username')
-    u_mail = user + "@postproduction.team"
+    # user = os.getenv('username')
+    # u_mail = user + "@postproduction.team"
 
     # Query last record received
     records = QCformdb.query.order_by(QCformdb.id.desc()).first()
@@ -40,26 +40,26 @@ def send_records_email():
     comments = rec['comments']
 
     # Format email delivery
-    email_comp = '{} sent a new Quality Form: ' \
-                 'ID: {} ' \
-                 'TIME: {} ' \
-                 'EDITOR: {} ' \
-                 'PRODUCER: {} ' \
-                 'PROGRAM: {} ' \
-                 'SOURCE IDs: {} ' \
-                 'EXPORTED ID: {} ' \
-                 'COMMENTS: {}. ' \
-        .format(user, qid, timestamp, editor_name, producer_name, program_name,
-                exported_id, source_id, comments)
-    details = 'CAMERA QUALITY CONTROL: {} ' \
-              'SOUND QUALITY CONTROL: {}' \
-        .format(camera, sound)
+    # email_comp = '{} sent a new Quality Form: ' \
+    #              'ID: {} ' \
+    #              'TIME: {} ' \
+    #              'EDITOR: {} ' \
+    #              'PRODUCER: {} ' \
+    #              'PROGRAM: {} ' \
+    #              'SOURCE IDs: {} ' \
+    #              'EXPORTED ID: {} ' \
+    #              'COMMENTS: {}. ' \
+    #     .format(user, qid, timestamp, editor_name, producer_name, program_name,
+    #             exported_id, source_id, comments)
+    # details = 'CAMERA QUALITY CONTROL: {} ' \
+    #           'SOUND QUALITY CONTROL: {}' \
+    #     .format(camera, sound)
 
-    subject_user = user + ' sent a new QCForm'
+    # subject_user = user + ' sent a new QCForm'
 
     msg = Message(subject=subject_user, sender=app.config['ADMINS'][0], recipients=[u_mail])
-    msg.body = email_comp + details
-    msg.html = render_template('QCFormDelivery.html', user=user,
+    # msg.body = email_comp + details
+    msg.html = render_template('QCFormDelivery.html',
                                qid=qid, timestamp=timestamp, editor_name=editor_name,
                                producer_name=producer_name, program_name=program_name,
                                exported_id=exported_id, source_id=source_id,

@@ -3,10 +3,11 @@ import os
 from flask import render_template, flash, request, redirect, url_for
 
 from app import app, db
-from app.emails import send_records_email
+# from app.emails import send_records_email
 from app.forms import Qcform
 from app.models import QCformdb, Camera, Sound
 from datetime import datetime, timedelta
+from app.qrcode import makeqr
 
 
 @app.route('/')
@@ -44,9 +45,9 @@ def index():
 
         db.session.commit()
 
-        flash('Your Quality Control Report has been sent!', 'done')
-        send_records_email()
-        return redirect('index')
+        # flash('Your Quality Control Report has been recorded in our database!', 'done')
+
+        return redirect('qrcode')
     else:
 
         return render_template('index.html', form=form)
@@ -56,7 +57,7 @@ def index():
 def records():
     u = os.getenv('username')
     page = request.args.get('page', 1, type=int)
-    records_list = QCformdb.query.order_by(QCformdb.id.asc()).paginate(
+    records_list = QCformdb.query.order_by(QCformdb.id.desc()).paginate(
         page, app.config['RECORDS_PER_PAGE'], False)
 
     next_url = url_for('records', page=records_list.next_num)\
@@ -67,8 +68,17 @@ def records():
     return render_template('records.html', title='Records', user=u,
                            records_list=records_list.items,
                            next_url=next_url, prev_url=prev_url)
-def data():
-    rec = QCformdb.query.order_by(QCformdb.id.asc()).one_or_none()
-    print(rec)
 
-    return rec
+@app.route('/qrcode')
+def qrcode():
+    # i = url_for('static', filename='img/qr.png')
+    # flash('Point your mobile camera to the QR code to send the email', 'done')
+    makeqr()
+    last_qc = QCformdb.query.order_by(QCformdb.id.desc()).first()
+    qr = url_for('static', filename='img/qr_{}.png'.format(last_qc.id))
+    return render_template('qrcode.html', qr=qr)
+
+
+
+
+

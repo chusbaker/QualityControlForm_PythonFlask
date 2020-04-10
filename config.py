@@ -12,6 +12,7 @@ class Config(object):
 
     RECORDS_PER_PAGE = 10
 
+
     MAIL_SERVER = 'localhost'
 
     MAIL_PORT = 25

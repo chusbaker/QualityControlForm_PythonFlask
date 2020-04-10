@@ -3,21 +3,21 @@
 {% block content %}
     <table class="form-style-11">
      <tr>
-        <td>ID</td>
-        <td>Editor Name</td>
-        <td>Producer Name</td>
-        <td>Program Name</td>
-        <td>Source id</td>
-        <td>Exported id</td>
-        <td>Camera</td>
-        <td>Sound</td>
-        <td>Comments</td>
-        <td>Timestamp</td>
+        <td>|..ID..|</td>
+        <td>|...Editor_Name...|</td>
+        <td>|...Producer_Name...|</td>
+        <td>|...Program_Name...|</td>
+        <td>|...Source_Id...|</td>
+        <td>|...Exported_Id...|</td>
+        <td>|...Camera_Quality_Control...|</td>
+        <td>|...Sound_Quality_Control...|</td>
+        <td>|...Comments...|</td>
+        <td>|...Timestamp</td>
      </tr>
       {% for row in records_list %}
     <tr>
 
-        <td>{{ row.qc_form_id }}</td>
+        <td>{{ row.id }}</td>
         <td>{{ row.editor_name }}</td>
         <td>{{ row.producer_name }}</td>
         <td>{{ row.program_name }}</td>
